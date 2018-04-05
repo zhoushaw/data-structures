@@ -8,22 +8,29 @@
 	堆排序 O(N*logN)
 	希尔排序 O(N*logN)
 */
-
-function insertSort(arr){
-	if(arr.length==0||arr.length==1){
-		return arr;
-	}
-
-	for(var i=0;i<arr.length;i++){
-		var temp = arr[i];
-		var index = i-1;
-		while(index>-1&&arr[index]>temp){
-			arr[index+1] = arr[index];
-			index--;
-		}
-		arr[index+1] = temp;
-	}
-	return arr;
+function ReverseList(pHead)
+{
+    var pre = null;
+    var next = null;
+    while(pHead.next!=null){
+        next = pHead.next;
+        pHead.next = pre;
+        pre = pHead;
+        pHead = next;
+    }
+    
+    return pHead;
 }
-var arr = [1,34,1,3,5,7,9,3,121,34,1];
-console.log(insertSort(arr));
+var obj = {
+	value: 1,
+	next: {
+		value: 2,
+		next:{
+			value: 3,
+			next: {
+				value: 4
+			}
+		}
+	}
+}
+console.log(ReverseList(obj));
