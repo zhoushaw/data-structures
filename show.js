@@ -5,6 +5,7 @@
 ​// 将字符拆分成数组
 ​let strArr = str.split('');
 ​
+
 ​console.log(findLitter(strArr));
 ​// 查找首次出现为2的字符
 ​function findLitter(strArr){
