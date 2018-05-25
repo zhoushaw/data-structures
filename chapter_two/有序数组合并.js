@@ -6,6 +6,7 @@ function mergeArr(arrA,arrB,i,j){
 	var h = i+j-1;
 	var i = i-1;
 	var j = j-1;
+
 	while(i>=0&&j>=0){
 		arrA[h--] = arrA[i]>arrB[j]?arrA[i--]:arrB[j--];
 	}
