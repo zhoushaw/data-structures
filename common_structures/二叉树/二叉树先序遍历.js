@@ -45,14 +45,11 @@ result = [];
 function traverseBinaryTree (rootTreeNode) {
     let binaryTreeStack = [];
     if (!rootTreeNode) return;
-    binaryTreeStack.push(rootTreeNode);
 
-    while (binaryTreeStack.length > 0 && rootTreeNode) {
+    while (binaryTreeStack.length > 0 || rootTreeNode) {
         while (rootTreeNode) {
             result.push(rootTreeNode.value);
-            if (rootTreeNode.left || rootTreeNode.right){
-                binaryTreeStack.push(rootTreeNode);
-            }
+            binaryTreeStack.push(rootTreeNode);
             rootTreeNode = rootTreeNode.left;
         } 
 
