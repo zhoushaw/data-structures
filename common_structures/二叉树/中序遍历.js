@@ -35,17 +35,10 @@ function traverseBinaryTreeRecursive(rootTreeNode){
 traverseBinaryTreeRecursive(tree);
 console.log(result);
 
-/**
- * 非递归版本,伪代码：
- * ①初始化过程：创建空堆栈（binaryTreeStack），创建结果数组（result）
- * ②访问根节点，并将节点值放入数组result，将根节点推入binaryTreeStack栈中
- * ③而是当考查节点为空时，从栈中弹出的时候再进行输出(永远先考虑左子树，直到左子树为空才访问根节点)
- *  */
 result = [];
 function traverseBinaryTree (rootTreeNode) {
     let binaryTreeStack = [];
     if (!rootTreeNode) return;
-    binaryTreeStack.push(rootTreeNode);
 
     while (binaryTreeStack.length > 0 || rootTreeNode) {
         while (rootTreeNode) {
